@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Switcher</title>
+	<style>
+		.switcher {
+			width: 124px;
+			height: 49px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.switcher * {
+			transition: all .2s;
+			-moz-transition: all .2s;
+			-webkit-transition: all .2s;
+			-o-transition: all .2s;
+			-ms-transition: all .2s;
+		}
+
+		.switcher .sw_btn {
+			background: url('btn.png') 0% 0% no-repeat;
+			width: 49px;
+			height: 49px;
+			display: block;
+			cursor: pointer;
+			z-index: 1;
+			position: relative;
+		}
+
+		.switcher .bg { background: url('bg-off.png') 0% 0% no-repeat; }
+		.switcher input.switcher-value:checked ~ .sw_btn { margin-left: 68px; }
+		.switcher input.switcher-value:checked ~ .sw_btn ~ .bg { background: url('bg-on.png') 0% 0% no-repeat; }
+		.switcher input.switcher-value { display: none; }
+		.switcher .bg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div class="switcher">
+		<input id="sw" type="checkbox" class="switcher-value">
+		<label for="sw" class="sw_btn"></label>
+		<div class="bg"></div>
+	</div>
+</body>
+</html>
